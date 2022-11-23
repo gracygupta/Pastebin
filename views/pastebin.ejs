@@ -5,36 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/pastebin.css" />
   </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background: #002b36;
-    }
-    .prettyprint {
-      color: #839496;
-      background-color: #002b36;
-    }
-    textarea {
-      width: 90%;
-      height: 90%;
-      overflow: auto;
-      border: 0;
-      padding: 0;
-      outline: none;
-      resize: none;
-      font-family: monospace;
-      font-size: 16px;
-      position: absolute;
-      top: 2em;
-      right: 2em;
-      bottom: 2em;
-      left: 4em;
-    }
-  </style>
   <body>
     <form action="/" method="post" id="myForm">
       <textarea
@@ -45,7 +17,6 @@
         spellcheck="false"
       ></textarea>
     </form>
-
     <script>
       var isCtrl = false;
       window.addEventListener("load", function () {

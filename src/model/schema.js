@@ -8,7 +8,7 @@ const dataSchema = new mongoose.Schema({
     required: true,
   },
   data: {
-    type: String,
+    type: Array,
   },
 });
 

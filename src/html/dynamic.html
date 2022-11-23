@@ -15,10 +15,8 @@
         background-color: #002b36;
         height: 100vh;
         width: 100vw;
-        margin: 8px;
       }
       pre {
-        padding: 2px;
         font-family: monospace;
         font-size: 16px;
         position: absolute;
@@ -26,24 +24,37 @@
         right: 2em;
         bottom: 2em;
         left: 1.5em;
-        white-space: pre;
-        margin: 1em 0px;
       }
+
+      .prettyprint {
+        padding: 2px;
+        color: #839496;
+        background-color: #002b36;
+      }
+
       ol {
-        display: block;
-        list-style-type: decimal;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 40px;
+        list-style-position: inside;
+        float: left;
+      }
+
+      ol.linenums {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: fit-content;
+      }
+
+      li.L0 {
+        margin: -18px 0;
+        background: #002b36;
       }
     </style>
   </head>
   <body>
     <pre class="prettyprint linenums prettyprinted">
     <ol class="linenums">
-        <li class="L0"><span class="pln">Gracygupta</span></li>
+        <li class="L0"><span class="pln"><% -data %></span></li>
+        <li class="L0"><span class="pln"><% -data %></span></li>
+        <li class="L0"><span class="pln"><% -data %></span></li>
     </ol>
 </pre>
   </body>
