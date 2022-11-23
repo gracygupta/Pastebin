@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #002b36;
+    }
+    .prettyprint {
+      color: #839496;
+      background-color: #002b36;
+    }
+    textarea {
+      width: 90%;
+      height: 90%;
+      overflow: auto;
+      border: 0;
+      padding: 0;
+      outline: none;
+      resize: none;
+      font-family: monospace;
+      font-size: 16px;
+      position: absolute;
+      top: 2em;
+      right: 2em;
+      bottom: 2em;
+      left: 4em;
+    }
+  </style>
+  <body>
+    <form action="/" method="post" id="myForm">
+      <textarea
+        class="prettyprint"
+        id="paste"
+        name="data"
+        placeholder="[ paste text  -  ctrl+s to save ]"
+        spellcheck="false"
+        onkeydown="submit"
+      ></textarea>
+    </form>
+
+    <script>
+      var isCtrl = false;
+      window.addEventListener("load", function () {
+        document
+          .getElementById("paste")
+          .addEventListener("keydown", function (e) {
+            if (e.keyCode == 17) {
+              e.preventDefault();
+              isCtrl = true;
+            }
+
+            if (e.keyCode == 83 && isCtrl) {
+              e.preventDefault();
+              // your save logic goes here
+              document.getElementById("myForm").submit();
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
