@@ -5,7 +5,7 @@ require("./db/conn");
 const cookieParser = require("cookie-parser");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const mins = 1000 * 60 * 15;
 
 //Routes import
