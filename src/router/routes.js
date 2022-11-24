@@ -9,19 +9,31 @@ router.get("/", function (req, res) {
 });
 
 router.post("/", async (req, res) => {
-  pasted = req.body.data;
-  const result = pasted.split("\n");
-  id = gen_id();
-  console.log("id: ", id);
-  Data.create({
-    id: id,
-    data: result,
-  });
-  //   res.redirect(`/${id}`);
+  try {
+    pasted = req.body.data;
+    const result = pasted.split("\n");
+    id = gen_id();
+    console.log("id assigned: ", id);
+    Data.create({
+      id: id,
+      data: result,
+    })
+      .then(() => console.log("record created"))
+      .catch((e) => console.log(e));
+    res.redirect(`/${id}`);
+  } catch (e) {
+    res.send("Error");
+  }
 });
 
-// app.get("/:id", async (req, res) => {
-//   res.render("dynamic", { data: req.data });
-// });
+router.get("/:id", async (req, res) => {
+  try {
+    const pasteData = await Data.findOne({ id: req.params.id });
+    console.log(pasteData.data);
+    res.render("dynamic", { data: pasteData.data });
+  } catch (e) {
+    res.send("Error");
+  }
+});
 
 module.exports = router;

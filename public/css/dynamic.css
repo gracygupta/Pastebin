@@ -27,6 +27,7 @@ pre {
 ol {
   list-style-position: inside;
   float: left;
+  line-height: 0.75;
 }
 
 ol.linenums {
